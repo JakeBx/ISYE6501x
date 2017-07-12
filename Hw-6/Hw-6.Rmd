@@ -1,0 +1,149 @@
+---
+title: "Crab"
+output:
+  pdf_document: default
+  html_document: default
+---
+## Question 1
+
+I excuted this simulation in Arena over 10 repeats of 5 hours. It was frustrating because I hit a whole lot of errors with the simulation size. With my time over I would complete in SimPy.
+
+Here is my basic setup:
+
+#![Main](ss1.png)
+
+I operated with 4 guards at the Id Check and 4 Scanners:
+
+#![Main](ss2.png)
+
+I pretty much couldnt't reduce resources or the simulation would hit the 150 error.
+
+The results are included in the attached pdf. The end to end average processing time was 0.1184 hours ot a little over 6 minutes.
+
+## Question 2
+
+There is a reasonable amount of scripting in this answer, I feel like it could be done much more efficently, in particular where I manual script out the models.
+
+```{r}
+# initialize the data
+cancer <- read.table('breast-cancer-wisconsin.data.txt', sep=',',header = FALSE)
+# head(cancer,10)
+# sapply(cancer,class)
+# summary(cancer)
+
+cancer.copy <- cancer
+cancer.copy$V7[cancer.copy$V7==('?')] <- NA
+cancer.copy$V7 <- as.numeric(cancer.copy$V7)
+# summary(cancer.copy)
+
+# Pattern of missing values
+library('mice')
+library(Hmisc)
+
+# how much data is missing
+pMiss <- function(x){sum(is.na(x))/length(x)*100}
+apply(cancer.copy,2,pMiss) # 2.3% of V7 missing, less than 5%
+```
+There is 2.3% of the 7th variable missing. We will first sub with the mean and built a model:
+```{r}
+# impute mean
+cancer.mean <- cancer.copy
+cancer.mean$V7 <- with(cancer.mean, impute(cancer.mean$V7, mean))
+# summary(cancer.mean)
+
+# SVM Classifier
+library("kernlab")
+results = {}
+#mean dataset
+cancer.mean <- as.matrix(cancer.mean)
+model.mean <- ksvm(cancer.mean[,1:10],cancer.mean[,11],type="C-svc",kernel="vanilladot",C=100,scaled=TRUE)
+pred <- predict(model.mean,cancer.mean[,1:10])
+acc.mean <- sum(pred == cancer.mean[,11]) / nrow(cancer.mean)
+results['MEAN'] <- acc.mean
+```
+Next we built the data set with mode. For this one a defined the function for identifing the mode:
+```{r}
+# define mode function
+getmode <- function(v) {
+  uniqv <- unique(v)
+  uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+
+# impute mode
+cancer.mode <- cancer.copy
+cancer.mode$V7 <- with(cancer.mode, impute(cancer.mode$V7, fun=getmode(cancer.mode$V7)))
+# summary(cancer.mode)
+
+# mode dataset
+cancer.mode <- as.matrix(cancer.mode)
+model.mode <- ksvm(cancer.mode[,1:10],cancer.mode[,11],type="C-svc",kernel="vanilladot",C=100,scaled=TRUE)
+pred <- predict(model.mode,cancer.mode[,1:10])
+acc.mode <- sum(pred == cancer.mode[,11]) / nrow(cancer.mode)
+results['MODE'] <- acc.mode
+```
+Here we impute values via regression and then build a model:
+```{r}
+# imputation via regression
+cancer.regr <- cancer.copy
+imp <- mice(cancer.regr, method = "norm.predict", m = 1)
+cancer.regr <- complete(imp)
+
+#regression dataset
+cancer.regr <- as.matrix(cancer.regr)
+model.regr <- ksvm(cancer.regr[,1:10],cancer.regr[,11],type="C-svc",kernel="vanilladot",C=100,scaled=TRUE)
+pred <- predict(model.regr,cancer.regr[,1:10])
+acc.regr <- sum(pred == cancer.regr[,11]) / nrow(cancer.regr)
+results['REGRESSION'] <- acc.regr
+```
+I added some random number between -1 and 1 from uniform distribution. There are probably some arguments about the error distribution and scale but I just did this quick and dirty:
+```{r}
+# add perturbation to regr
+cancer.per <- cancer.regr
+idx <- which(cancer.copy$V7 %in% NA)
+rando <- runif(length(idx),-1,1)
+for (i in 1:length(idx)){
+  cancer.per[idx[i],7]<-cancer.per[idx[i],7]+rando[i]
+}
+
+# use perturbation dataset
+cancer.per <- as.matrix(cancer.per)
+model.per <- ksvm(cancer.per[,1:10],cancer.per[,11],type="C-svc",kernel="vanilladot",C=100,scaled=TRUE)
+pred <- predict(model.per,cancer.per[,1:10])
+acc.per <- sum(pred == cancer.per[,11]) / nrow(cancer.per)
+results['PERTURBATION'] <- acc.per
+```
+Here we omit all NA values and just build with the original data:
+```{r}
+# omit NAs
+cancer.orig <- as.matrix(cancer.copy)
+model.orig <- ksvm(cancer.orig[,1:10],cancer.orig[,11], na.action = na.omit,type="C-svc",kernel="vanilladot",C=100,scaled=TRUE)
+pred.orig <- predict(model.orig,cancer.orig[-idx,1:10])
+acc.orig <- sum(pred.orig == cancer.orig[-idx,11]) / nrow(cancer.orig-length(idx))
+results['REMOVED'] <- acc.orig
+```
+Here we add a binary value for if there is data missing:
+```{r}
+# introduce binary value
+cancer.bin <- cancer.copy
+cancer.bin$m <- 0
+for (i in 1:length(idx)){
+  cancer.bin[idx[i],12]<-1
+  cancer.bin[idx[i],7]<-0
+}
+cancer.bin <- as.matrix(cancer.bin)
+model.bin <- ksvm(cancer.bin[,-11],cancer.bin[,11], na.action=na.fail, type="C-svc",kernel="vanilladot",C=100,scaled=TRUE)
+pred <- predict(model.bin,cancer.bin[,-11])
+acc.bin <- sum(pred == cancer.bin[,11]) / nrow(cancer.bin)
+results['BINARY'] <- acc.bin
+```
+And the results are:
+```{r}
+results
+```
+We see because we fit straight to the data the results are similiar. When we removed the data it become marginally less accurate. We could do smarter things with cross-val and test sets to determine how these imputation methods actually perform but this is ok for now.
+
+## Question 3
+
+Optimisation may be used to maximise profits for a car company. They would control the make types according to competitive actions, and vehicle attributes.
+
+We did a piece of work looking to optimise workflows through a major biometric system where the objective function was determined by operator hours required and the number of false matches and false non-matches that proceed through the system.

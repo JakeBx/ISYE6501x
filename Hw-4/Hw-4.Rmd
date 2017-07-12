@@ -1,0 +1,182 @@
+---
+title: "Hw-4"
+output: pdf_document
+---
+
+# Homework 4
+
+## Q1
+
+Below we import the data, perform principle component analysis and train a basic liniear model with the first four components (highest variance explained).
+
+```{r}
+# load the libraries
+library(caret)
+crime = read.table('../Hw-3/uscrime.txt', header = TRUE)
+crime.pca <- prcomp(crime[1:15], scale. = TRUE)
+summary(crime.pca)
+```
+The first 4 elements explain 80% of the variance. Lets have a look at the breakdown graphically: 
+```{r}
+plot(crime.pca, type = "l")
+biplot(crime.pca, scale = 0)
+```
+From the elbow graph we see the diminishing return each component contributes.
+From the biplot we see the rotation and level of importance.
+```{r}
+sd <- crime.pca$sdev
+loadings <- crime.pca$rotation
+rownames(loadings) <- colnames(crime[1:15])
+scores <- crime.pca$x
+
+crime.train <- as.data.frame(crime.pca$x[,1:4], header = T)
+crime.train$Y <- crime$Crime
+
+model.pca <- lm(Y~., data=crime.train)
+summary(model.pca)
+```
+With an r^2 of 30.1% we explain less variance than last weeks homework.
+Below we can explore preprocessing the parameters in order to reverse engineer the model back into the original factors. I will use 10-fold cross validation in the training.
+```{r}
+# calculate the pre-process parameters from the dataset
+preprocessParams <- preProcess(crime[1:15], method=c("center", "scale", "pca"), pcaComp = 4)
+# preprocessParams$rotation
+
+# transform the dataset using the parameters
+transformed <- predict(preprocessParams, crime[1:15])
+# summarize the transformed dataset
+# summary(transformed)
+transformed$Y <- crime$Crime
+
+control <- trainControl(method="repeatedcv", number=10, repeats=3)
+metric <- "RMSE"
+# lm
+set.seed(7)
+fit.lm <- train(Y~., data=transformed, method="lm", metric=metric, trControl=control)
+final.model <- fit.lm$finalModel
+
+model.inter<-as.data.frame(preprocessParams$rotation)
+for (i in 1:4){
+  model.inter[,i] <- model.inter[,i]*final.model$coefficients[i+1]
+}
+
+coefs <- data.frame(row.names = c(colnames(crime[1:15]), "intercept"))
+for (i in 1:15){
+  coefs[i,1] <- sum(model.inter[i,])
+}
+coefs[16,1]<-final.model$coefficients[1]
+coefs
+```
+
+So this is our model translated back into the original elements in via "un-rotation"
+
+## Q2
+
+Below we build the models for the regression tree and the random forest:
+```{r}
+library(caret)
+library(rpart)
+library(corrplot)
+
+crime = read.table('../Hw-3/uscrime.txt', header = TRUE)
+
+# Run algorithms using 10-fold cross validation
+control <- trainControl(method="repeatedcv", number=10, repeats=3)
+metric <- "RMSE"
+
+set.seed(42)
+grid <- expand.grid(.cp=c(0, 0.05, 0.1))
+fit.cart <- train(Crime~., data=crime, method="rpart", metric=metric, tuneGrid=grid, preProc=c("center", "scale", "BoxCox"), trControl=control)
+# Random Forest
+set.seed(42)
+fit.rf <- train(Crime~., data=crime, method="rf", metric=metric, preProc=c("BoxCox"), trControl=control)
+# Compare algorithms
+transform_results <- resamples(list(CART=fit.cart, RF=fit.rf))
+summary(transform_results)
+dotplot(transform_results)
+```
+The RF model had a slightly lower RMSE, They had very high R-sq values.
+Lets have a look at the look at each of these to understand the results:
+```{r}
+par(mfrow = c(1,2), xpd = NA)
+plot(fit.cart$finalModel, uniform=TRUE, 
+    main="Regression Tree for USCrime")
+text(fit.cart$finalModel, use.n=TRUE, all=TRUE, cex=.8)
+
+print(fit.rf$finalModel) # view results 
+importance(fit.rf$finalModel, type=2) # importance of each predictor
+```
+We can see that there were quite a lot of impurity in certain nodes. As with previous analysis we can probably prune down some of the fetures to get a higher performing model. From the tree structure, we can see that the decisions are Po1, Pop and NW.
+
+## Q3
+
+We use logistic regression nodes in deep learning algorithims in combination with relus to do certain computer vision tasks. So looking at a sequence of pixels it might say this image is a possible case of fraud. Another example may be when considering which sites to drill for oil. Features may include: mineral sample levels, location of previous oil sites etc.
+
+## Q4
+
+Lets produce our logistic regression model
+```{r}
+credit = read.table("germancredit.txt")
+
+library(ggplot2)
+
+names(credit) <- c('ca_status','mob','credit_history','purpose','credit_amount','savings',
+                        'present_employment_since','status_sex','installment_rate_income','other_debtors',
+                        'present_residence_since','property','age','other_installment','housing','existing_credits',
+                        'job','liable_maintenance_people','telephone','foreign_worker','gb')
+
+credit$gb <- factor(credit$gb,levels=c(2,1),labels=c("bad","good"))
+model <- glm(data=credit,formula=gb~.,family=binomial(link="logit"))
+credit$prob <- predict(model,newdata=credit, type="response")
+
+ggplot(data=credit) + geom_boxplot(aes(y=prob,x=gb))  + coord_flip()
+```
+Just from looking at the distribution the model is doing a reasonable job of seperating the data with more than 75% of the good credit ratings above 75% of the bad credit ratings.
+
+Now we will have a look at the ROC and AUC measures:
+```{r}
+library(ROCR)
+pr <- prediction(credit$prob, credit$gb)
+prf <- performance(pr, measure = "tpr", x.measure = "fpr")
+plot(prf)
+
+auc <- performance(pr, measure = "auc")
+auc <- auc@y.values[[1]]
+auc
+```
+this looks pretty good, we see a good climb in performance, and an auc of 83% certainly suggests this may be a useful model.
+
+Finally, lets go about threshilding this. We will define a cost function and then just desend this from 50% through to where cost starts to increase:
+```{r}
+thresh <- 0.5
+cost <- Inf 
+
+repeat{
+  fitted.results <- ifelse(credit$prob > thresh,"good","bad")
+  CM <- table(credit$gb, fitted.results)
+  new_cost = 5*CM[1,2]+CM[2,1]
+  if(new_cost < cost){
+    cost <- new_cost
+    thresh <- thresh +0.01
+  }
+  else{
+    thresh <- thresh - 0.01
+    break
+  }
+}
+thresh
+```
+We produce a threshold of 69% (lol), lets have a look at what the model performance is (on the training data) at this threshold:
+```{r}
+fitted.results <- ifelse(credit$prob > thresh,"good","bad")
+CM <- table(credit$gb, fitted.results)
+thresh
+CM
+
+misClasificError <- mean(fitted.results != credit$gb)
+print(paste('Accuracy',1-misClasificError))
+```
+
+76.4% accuracy however this largely consists of good results classified as bad, rather than bad classified as good.
+
+What a great time.

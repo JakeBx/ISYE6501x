@@ -1,0 +1,938 @@
+
+                                      ARENA Simulation Results
+                                       Jake - License: STUDENT
+
+                                  Summary for Replication 1 of 10
+
+Project: Airport Flows                                               Run execution date : 6/26/2017
+Analyst: Jake                                                        Model revision date: 6/26/2017
+
+Replication ended at time      : 5.0 Hours 
+Base Time Units: Hours
+
+                                           TALLY VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Observations
+___________________________________________________________________________________________________
+
+Traveller.VATime                            .02464     8.1648E-04 .00856     .08756       1409    
+Traveller.NVATime                           .00000     .00000     .00000     .00000       1409    
+Traveller.WaitTime                          .07769     (Corr)     .00000     .35015       1409    
+Traveller.TranTime                          .00000     .00000     .00000     .00000       1409    
+Traveller.OtherTime                         .00000     .00000     .00000     .00000       1409    
+Traveller.TotalTime                         .10233     (Corr)     .01052     .40163       1409    
+ID Boarding Pass Check.Queue.WaitingTime    .05942     (Corr)     .00000     .34242       1423    
+Personal Scanner.Queue.WaitingTime          .02075     (Corr)     .00000     .07679       1413    
+
+                                     DISCRETE-CHANGE VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Final Value
+___________________________________________________________________________________________________
+
+Traveller.WIP                               32.187     (Corr)     .00000     111.00     111.00    
+Resource 1.NumberBusy                       .00000     (Insuf)    .00000     .00000     .00000    
+Resource 1.NumberScheduled                  1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Resource 1.Utilization                      .00000     (Insuf)    .00000     .00000     .00000    
+ABF 4.NumberBusy                            .83513     (Insuf)    .00000     1.0000     1.0000    
+ABF 4.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 4.Utilization                           .83513     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberBusy                            .87099     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 2.Utilization                           .87099     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberBusy                            .85972     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 3.Utilization                           .85972     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberBusy                            .86940     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 1.Utilization                           .86940     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberBusy                        .88358     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 4.Utilization                       .88358     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberBusy                        .87863     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 1.Utilization                       .87863     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberBusy                        .88205     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 3.Utilization                       .88205     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberBusy                        .88649     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 2.Utilization                       .88649     (Insuf)    .00000     1.0000     1.0000    
+ID Boarding Pass Check.Queue.NumberInQueue  19.348     (Corr)     .00000     99.000     97.000    
+Personal Scanner.Queue.NumberInQueue        5.8727     (Corr)     .00000     25.000     6.0000    
+
+                                             OUTPUTS
+
+Identifier                                   Value
+_____________________________________________________________
+
+Traveller.NumberIn                          1520.0    
+Traveller.NumberOut                         1409.0    
+Resource 1.NumberSeized                     .00000    
+Resource 1.ScheduledUtilization             .00000    
+ABF 4.NumberSeized                          338.00    
+ABF 4.ScheduledUtilization                  .83513    
+ABF 2.NumberSeized                          364.00    
+ABF 2.ScheduledUtilization                  .87099    
+ABF 3.NumberSeized                          356.00    
+ABF 3.ScheduledUtilization                  .85972    
+ABF 1.NumberSeized                          365.00    
+ABF 1.ScheduledUtilization                  .86940    
+Scanner 4.NumberSeized                      350.00    
+Scanner 4.ScheduledUtilization              .88358    
+Scanner 1.NumberSeized                      354.00    
+Scanner 1.ScheduledUtilization              .87863    
+Scanner 3.NumberSeized                      353.00    
+Scanner 3.ScheduledUtilization              .88205    
+Scanner 2.NumberSeized                      356.00    
+Scanner 2.ScheduledUtilization              .88649    
+System.NumberOut                            1409.0    
+
+Beginning replication 2 of 10
+
+                                      ARENA Simulation Results
+                                       Jake - License: STUDENT
+
+                                  Summary for Replication 2 of 10
+
+Project: Airport Flows                                               Run execution date : 6/26/2017
+Analyst: Jake                                                        Model revision date: 6/26/2017
+
+Replication ended at time      : 5.0 Hours 
+Base Time Units: Hours
+
+                                           TALLY VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Observations
+___________________________________________________________________________________________________
+
+Traveller.VATime                            .02493     5.2946E-04 .00836     .11273       1393    
+Traveller.NVATime                           .00000     .00000     .00000     .00000       1393    
+Traveller.WaitTime                          .07386     (Corr)     .00000     .28863       1393    
+Traveller.TranTime                          .00000     .00000     .00000     .00000       1393    
+Traveller.OtherTime                         .00000     .00000     .00000     .00000       1393    
+Traveller.TotalTime                         .09880     (Corr)     .00884     .35662       1393    
+ID Boarding Pass Check.Queue.WaitingTime    .06505     (Corr)     .00000     .26450       1413    
+Personal Scanner.Queue.WaitingTime          .01151     .00366     .00000     .04919       1397    
+
+                                     DISCRETE-CHANGE VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Final Value
+___________________________________________________________________________________________________
+
+Traveller.WIP                               30.242     (Corr)     .00000     103.00     90.000    
+Resource 1.NumberBusy                       .00000     (Insuf)    .00000     .00000     .00000    
+Resource 1.NumberScheduled                  1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Resource 1.Utilization                      .00000     (Insuf)    .00000     .00000     .00000    
+ABF 4.NumberBusy                            .86773     (Insuf)    .00000     1.0000     1.0000    
+ABF 4.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 4.Utilization                           .86773     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberBusy                            .86920     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 2.Utilization                           .86920     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberBusy                            .88871     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 3.Utilization                           .88871     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberBusy                            .88968     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 1.Utilization                           .88968     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberBusy                        .85751     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 4.Utilization                       .85751     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberBusy                        .86701     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 1.Utilization                       .86701     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberBusy                        .87992     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 3.Utilization                       .87992     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberBusy                        .87365     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 2.Utilization                       .87365     (Insuf)    .00000     1.0000     1.0000    
+ID Boarding Pass Check.Queue.NumberInQueue  19.997     (Corr)     .00000     86.000     70.000    
+Personal Scanner.Queue.NumberInQueue        3.2511     1.1965     .00000     17.000     12.000    
+
+                                             OUTPUTS
+
+Identifier                                   Value
+_____________________________________________________________
+
+Traveller.NumberIn                          1483.0    
+Traveller.NumberOut                         1393.0    
+Resource 1.NumberSeized                     .00000    
+Resource 1.ScheduledUtilization             .00000    
+ABF 4.NumberSeized                          326.00    
+ABF 4.ScheduledUtilization                  .86773    
+ABF 2.NumberSeized                          385.00    
+ABF 2.ScheduledUtilization                  .86920    
+ABF 3.NumberSeized                          330.00    
+ABF 3.ScheduledUtilization                  .88871    
+ABF 1.NumberSeized                          372.00    
+ABF 1.ScheduledUtilization                  .88968    
+Scanner 4.NumberSeized                      348.00    
+Scanner 4.ScheduledUtilization              .85751    
+Scanner 1.NumberSeized                      347.00    
+Scanner 1.ScheduledUtilization              .86701    
+Scanner 3.NumberSeized                      352.00    
+Scanner 3.ScheduledUtilization              .87992    
+Scanner 2.NumberSeized                      350.00    
+Scanner 2.ScheduledUtilization              .87365    
+System.NumberOut                            1393.0    
+
+Beginning replication 3 of 10
+
+                                      ARENA Simulation Results
+                                       Jake - License: STUDENT
+
+                                  Summary for Replication 3 of 10
+
+Project: Airport Flows                                               Run execution date : 6/26/2017
+Analyst: Jake                                                        Model revision date: 6/26/2017
+
+Replication ended at time      : 5.0 Hours 
+Base Time Units: Hours
+
+                                           TALLY VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Observations
+___________________________________________________________________________________________________
+
+Traveller.VATime                            .02497     8.3796E-04 .00858     .10677       1419    
+Traveller.NVATime                           .00000     .00000     .00000     .00000       1419    
+Traveller.WaitTime                          .08769     (Corr)     .00000     .26685       1419    
+Traveller.TranTime                          .00000     .00000     .00000     .00000       1419    
+Traveller.OtherTime                         .00000     .00000     .00000     .00000       1419    
+Traveller.TotalTime                         .11266     (Corr)     .01097     .31066       1419    
+ID Boarding Pass Check.Queue.WaitingTime    .06969     (Corr)     .00000     .23932       1432    
+Personal Scanner.Queue.WaitingTime          .01873     (Corr)     .00000     .06667       1423    
+
+                                     DISCRETE-CHANGE VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Final Value
+___________________________________________________________________________________________________
+
+Traveller.WIP                               33.040     (Corr)     .00000     90.000     49.000    
+Resource 1.NumberBusy                       .00000     (Insuf)    .00000     .00000     .00000    
+Resource 1.NumberScheduled                  1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Resource 1.Utilization                      .00000     (Insuf)    .00000     .00000     .00000    
+ABF 4.NumberBusy                            .87294     (Insuf)    .00000     1.0000     1.0000    
+ABF 4.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 4.Utilization                           .87294     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberBusy                            .90788     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 2.Utilization                           .90788     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberBusy                            .88991     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 3.Utilization                           .88991     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberBusy                            .89832     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 1.Utilization                           .89832     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberBusy                        .88346     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 4.Utilization                       .88346     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberBusy                        .89333     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 1.Utilization                       .89333     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberBusy                        .88323     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 3.Utilization                       .88323     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberBusy                        .88708     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 2.Utilization                       .88708     (Insuf)    .00000     1.0000     1.0000    
+ID Boarding Pass Check.Queue.NumberInQueue  20.584     (Corr)     .00000     81.000     36.000    
+Personal Scanner.Queue.NumberInQueue        5.3394     (Corr)     .00000     22.000     5.0000    
+
+                                             OUTPUTS
+
+Identifier                                   Value
+_____________________________________________________________
+
+Traveller.NumberIn                          1468.0    
+Traveller.NumberOut                         1419.0    
+Resource 1.NumberSeized                     .00000    
+Resource 1.ScheduledUtilization             .00000    
+ABF 4.NumberSeized                          356.00    
+ABF 4.ScheduledUtilization                  .87294    
+ABF 2.NumberSeized                          376.00    
+ABF 2.ScheduledUtilization                  .90788    
+ABF 3.NumberSeized                          352.00    
+ABF 3.ScheduledUtilization                  .88991    
+ABF 1.NumberSeized                          348.00    
+ABF 1.ScheduledUtilization                  .89832    
+Scanner 4.NumberSeized                      349.00    
+Scanner 4.ScheduledUtilization              .88346    
+Scanner 1.NumberSeized                      360.00    
+Scanner 1.ScheduledUtilization              .89333    
+Scanner 3.NumberSeized                      355.00    
+Scanner 3.ScheduledUtilization              .88323    
+Scanner 2.NumberSeized                      359.00    
+Scanner 2.ScheduledUtilization              .88708    
+System.NumberOut                            1419.0    
+
+Beginning replication 4 of 10
+
+                                      ARENA Simulation Results
+                                       Jake - License: STUDENT
+
+                                  Summary for Replication 4 of 10
+
+Project: Airport Flows                                               Run execution date : 6/26/2017
+Analyst: Jake                                                        Model revision date: 6/26/2017
+
+Replication ended at time      : 5.0 Hours 
+Base Time Units: Hours
+
+                                           TALLY VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Observations
+___________________________________________________________________________________________________
+
+Traveller.VATime                            .02462     8.8328E-04 .00855     .11553       1528    
+Traveller.NVATime                           .00000     .00000     .00000     .00000       1528    
+Traveller.WaitTime                          .11892     (Corr)     .00000     .26307       1528    
+Traveller.TranTime                          .00000     .00000     .00000     .00000       1528    
+Traveller.OtherTime                         .00000     .00000     .00000     .00000       1528    
+Traveller.TotalTime                         .14354     (Corr)     .00930     .31508       1528    
+ID Boarding Pass Check.Queue.WaitingTime    .09624     (Corr)     .00000     .25983       1551    
+Personal Scanner.Queue.WaitingTime          .02298     .00486     .00000     .05718       1532    
+
+                                     DISCRETE-CHANGE VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Final Value
+___________________________________________________________________________________________________
+
+Traveller.WIP                               44.605     (Corr)     .00000     93.000     36.000    
+Resource 1.NumberBusy                       .00000     (Insuf)    .00000     .00000     .00000    
+Resource 1.NumberScheduled                  1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Resource 1.Utilization                      .00000     (Insuf)    .00000     .00000     .00000    
+ABF 4.NumberBusy                            .94144     (Insuf)    .00000     1.0000     1.0000    
+ABF 4.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 4.Utilization                           .94144     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberBusy                            .95827     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 2.Utilization                           .95827     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberBusy                            .94188     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 3.Utilization                           .94188     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberBusy                            .96148     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 1.Utilization                           .96148     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberBusy                        .94624     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 4.Utilization                       .94624     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberBusy                        .94892     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 1.Utilization                       .94892     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberBusy                        .93835     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 3.Utilization                       .93835     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberBusy                        .93945     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 2.Utilization                       .93945     (Insuf)    .00000     1.0000     1.0000    
+ID Boarding Pass Check.Queue.NumberInQueue  29.944     (Corr)     .00000     74.000     13.000    
+Personal Scanner.Queue.NumberInQueue        7.0852     1.7007     .00000     20.000     15.000    
+
+                                             OUTPUTS
+
+Identifier                                   Value
+_____________________________________________________________
+
+Traveller.NumberIn                          1564.0    
+Traveller.NumberOut                         1528.0    
+Resource 1.NumberSeized                     .00000    
+Resource 1.ScheduledUtilization             .00000    
+ABF 4.NumberSeized                          388.00    
+ABF 4.ScheduledUtilization                  .94144    
+ABF 2.NumberSeized                          410.00    
+ABF 2.ScheduledUtilization                  .95827    
+ABF 3.NumberSeized                          397.00    
+ABF 3.ScheduledUtilization                  .94188    
+ABF 1.NumberSeized                          356.00    
+ABF 1.ScheduledUtilization                  .96148    
+Scanner 4.NumberSeized                      382.00    
+Scanner 4.ScheduledUtilization              .94624    
+Scanner 1.NumberSeized                      383.00    
+Scanner 1.ScheduledUtilization              .94892    
+Scanner 3.NumberSeized                      380.00    
+Scanner 3.ScheduledUtilization              .93835    
+Scanner 2.NumberSeized                      387.00    
+Scanner 2.ScheduledUtilization              .93945    
+System.NumberOut                            1528.0    
+
+Beginning replication 5 of 10
+
+                                      ARENA Simulation Results
+                                       Jake - License: STUDENT
+
+                                  Summary for Replication 5 of 10
+
+Project: Airport Flows                                               Run execution date : 6/26/2017
+Analyst: Jake                                                        Model revision date: 6/26/2017
+
+Replication ended at time      : 5.0 Hours 
+Base Time Units: Hours
+
+                                           TALLY VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Observations
+___________________________________________________________________________________________________
+
+Traveller.VATime                            .02481     6.6964E-04 .00844     .09613       1530    
+Traveller.NVATime                           .00000     .00000     .00000     .00000       1530    
+Traveller.WaitTime                          .11724     (Corr)     .00000     .31516       1530    
+Traveller.TranTime                          .00000     .00000     .00000     .00000       1530    
+Traveller.OtherTime                         .00000     .00000     .00000     .00000       1530    
+Traveller.TotalTime                         .14205     (Corr)     .01229     .38043       1530    
+ID Boarding Pass Check.Queue.WaitingTime    .08430     (Corr)     .00000     .25199       1540    
+Personal Scanner.Queue.WaitingTime          .03377     (Corr)     .00000     .11135       1534    
+
+                                     DISCRETE-CHANGE VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Final Value
+___________________________________________________________________________________________________
+
+Traveller.WIP                               46.127     (Corr)     .00000     112.00     111.00    
+Resource 1.NumberBusy                       .00000     (Insuf)    .00000     .00000     .00000    
+Resource 1.NumberScheduled                  1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Resource 1.Utilization                      .00000     (Insuf)    .00000     .00000     .00000    
+ABF 4.NumberBusy                            .95118     (Insuf)    .00000     1.0000     1.0000    
+ABF 4.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 4.Utilization                           .95118     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberBusy                            .92805     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 2.Utilization                           .92805     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberBusy                            .93822     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 3.Utilization                           .93822     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberBusy                            .94570     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 1.Utilization                           .94570     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberBusy                        .96353     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 4.Utilization                       .96353     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberBusy                        .96571     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 1.Utilization                       .96571     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberBusy                        .96446     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 3.Utilization                       .96446     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberBusy                        .96184     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 2.Utilization                       .96184     (Insuf)    .00000     1.0000     1.0000    
+ID Boarding Pass Check.Queue.NumberInQueue  28.146     (Corr)     .00000     104.00     101.00    
+Personal Scanner.Queue.NumberInQueue        10.361     (Corr)     .00000     35.000     2.0000    
+
+                                             OUTPUTS
+
+Identifier                                   Value
+_____________________________________________________________
+
+Traveller.NumberIn                          1641.0    
+Traveller.NumberOut                         1530.0    
+Resource 1.NumberSeized                     .00000    
+Resource 1.ScheduledUtilization             .00000    
+ABF 4.NumberSeized                          384.00    
+ABF 4.ScheduledUtilization                  .95118    
+ABF 2.NumberSeized                          377.00    
+ABF 2.ScheduledUtilization                  .92805    
+ABF 3.NumberSeized                          387.00    
+ABF 3.ScheduledUtilization                  .93822    
+ABF 1.NumberSeized                          392.00    
+ABF 1.ScheduledUtilization                  .94570    
+Scanner 4.NumberSeized                      383.00    
+Scanner 4.ScheduledUtilization              .96353    
+Scanner 1.NumberSeized                      376.00    
+Scanner 1.ScheduledUtilization              .96571    
+Scanner 3.NumberSeized                      384.00    
+Scanner 3.ScheduledUtilization              .96446    
+Scanner 2.NumberSeized                      391.00    
+Scanner 2.ScheduledUtilization              .96184    
+System.NumberOut                            1530.0    
+
+Beginning replication 6 of 10
+
+                                      ARENA Simulation Results
+                                       Jake - License: STUDENT
+
+                                  Summary for Replication 6 of 10
+
+Project: Airport Flows                                               Run execution date : 6/26/2017
+Analyst: Jake                                                        Model revision date: 6/26/2017
+
+Replication ended at time      : 5.0 Hours 
+Base Time Units: Hours
+
+                                           TALLY VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Observations
+___________________________________________________________________________________________________
+
+Traveller.VATime                            .02437     6.3419E-04 .00867     .10680       1516    
+Traveller.NVATime                           .00000     .00000     .00000     .00000       1516    
+Traveller.WaitTime                          .07861     (Corr)     .00000     .19775       1516    
+Traveller.TranTime                          .00000     .00000     .00000     .00000       1516    
+Traveller.OtherTime                         .00000     .00000     .00000     .00000       1516    
+Traveller.TotalTime                         .10298     (Corr)     .01128     .24302       1516    
+ID Boarding Pass Check.Queue.WaitingTime    .03942     .01149     .00000     .13301       1530    
+Personal Scanner.Queue.WaitingTime          .03894     (Corr)     .00000     .12559       1520    
+
+                                     DISCRETE-CHANGE VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Final Value
+___________________________________________________________________________________________________
+
+Traveller.WIP                               31.387     (Corr)     .00000     74.000     30.000    
+Resource 1.NumberBusy                       .00000     (Insuf)    .00000     .00000     .00000    
+Resource 1.NumberScheduled                  1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Resource 1.Utilization                      .00000     (Insuf)    .00000     .00000     .00000    
+ABF 4.NumberBusy                            .89421     (Insuf)    .00000     1.0000     1.0000    
+ABF 4.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 4.Utilization                           .89421     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberBusy                            .91519     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 2.Utilization                           .91519     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberBusy                            .89875     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 3.Utilization                           .89875     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberBusy                            .93336     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 1.Utilization                           .93336     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberBusy                        .94854     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 4.Utilization                       .94854     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberBusy                        .95036     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 1.Utilization                       .95036     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberBusy                        .93643     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 3.Utilization                       .93643     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberBusy                        .94501     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 2.Utilization                       .94501     (Insuf)    .00000     1.0000     1.0000    
+ID Boarding Pass Check.Queue.NumberInQueue  12.113     3.9731     .00000     48.000     16.000    
+Personal Scanner.Queue.NumberInQueue        11.852     (Corr)     .00000     42.000     6.0000    
+
+                                             OUTPUTS
+
+Identifier                                   Value
+_____________________________________________________________
+
+Traveller.NumberIn                          1546.0    
+Traveller.NumberOut                         1516.0    
+Resource 1.NumberSeized                     .00000    
+Resource 1.ScheduledUtilization             .00000    
+ABF 4.NumberSeized                          402.00    
+ABF 4.ScheduledUtilization                  .89421    
+ABF 2.NumberSeized                          374.00    
+ABF 2.ScheduledUtilization                  .91519    
+ABF 3.NumberSeized                          351.00    
+ABF 3.ScheduledUtilization                  .89875    
+ABF 1.NumberSeized                          403.00    
+ABF 1.ScheduledUtilization                  .93336    
+Scanner 4.NumberSeized                      380.00    
+Scanner 4.ScheduledUtilization              .94854    
+Scanner 1.NumberSeized                      384.00    
+Scanner 1.ScheduledUtilization              .95036    
+Scanner 3.NumberSeized                      372.00    
+Scanner 3.ScheduledUtilization              .93643    
+Scanner 2.NumberSeized                      384.00    
+Scanner 2.ScheduledUtilization              .94501    
+System.NumberOut                            1516.0    
+
+Beginning replication 7 of 10
+
+                                      ARENA Simulation Results
+                                       Jake - License: STUDENT
+
+                                  Summary for Replication 7 of 10
+
+Project: Airport Flows                                               Run execution date : 6/26/2017
+Analyst: Jake                                                        Model revision date: 6/26/2017
+
+Replication ended at time      : 5.0 Hours 
+Base Time Units: Hours
+
+                                           TALLY VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Observations
+___________________________________________________________________________________________________
+
+Traveller.VATime                            .02516     6.7220E-04 .00873     .12281       1392    
+Traveller.NVATime                           .00000     .00000     .00000     .00000       1392    
+Traveller.WaitTime                          .06689     (Corr)     .00000     .20317       1392    
+Traveller.TranTime                          .00000     .00000     .00000     .00000       1392    
+Traveller.OtherTime                         .00000     .00000     .00000     .00000       1392    
+Traveller.TotalTime                         .09205     (Corr)     .00874     .23366       1392    
+ID Boarding Pass Check.Queue.WaitingTime    .05006     (Corr)     .00000     .15666       1399    
+Personal Scanner.Queue.WaitingTime          .01655     (Corr)     .00000     .06808       1396    
+
+                                     DISCRETE-CHANGE VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Final Value
+___________________________________________________________________________________________________
+
+Traveller.WIP                               25.650     (Corr)     .00000     71.000     7.0000    
+Resource 1.NumberBusy                       .00000     (Insuf)    .00000     .00000     .00000    
+Resource 1.NumberScheduled                  1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Resource 1.Utilization                      .00000     (Insuf)    .00000     .00000     .00000    
+ABF 4.NumberBusy                            .86064     (Insuf)    .00000     1.0000     .00000    
+ABF 4.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 4.Utilization                           .86064     (Insuf)    .00000     1.0000     .00000    
+ABF 2.NumberBusy                            .88898     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 2.Utilization                           .88898     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberBusy                            .88027     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 3.Utilization                           .88027     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberBusy                            .90149     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 1.Utilization                           .90149     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberBusy                        .86371     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 4.Utilization                       .86371     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberBusy                        .88142     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 1.Utilization                       .88142     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberBusy                        .86980     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 3.Utilization                       .86980     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberBusy                        .87669     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 2.Utilization                       .87669     (Insuf)    .00000     1.0000     1.0000    
+ID Boarding Pass Check.Queue.NumberInQueue  14.007     (Corr)     .00000     54.000     .00000    
+Personal Scanner.Queue.NumberInQueue        4.6200     (Corr)     .00000     21.000     .00000    
+
+                                             OUTPUTS
+
+Identifier                                   Value
+_____________________________________________________________
+
+Traveller.NumberIn                          1399.0    
+Traveller.NumberOut                         1392.0    
+Resource 1.NumberSeized                     .00000    
+Resource 1.ScheduledUtilization             .00000    
+ABF 4.NumberSeized                          369.00    
+ABF 4.ScheduledUtilization                  .86064    
+ABF 2.NumberSeized                          361.00    
+ABF 2.ScheduledUtilization                  .88898    
+ABF 3.NumberSeized                          311.00    
+ABF 3.ScheduledUtilization                  .88027    
+ABF 1.NumberSeized                          358.00    
+ABF 1.ScheduledUtilization                  .90149    
+Scanner 4.NumberSeized                      344.00    
+Scanner 4.ScheduledUtilization              .86371    
+Scanner 1.NumberSeized                      351.00    
+Scanner 1.ScheduledUtilization              .88142    
+Scanner 3.NumberSeized                      351.00    
+Scanner 3.ScheduledUtilization              .86980    
+Scanner 2.NumberSeized                      350.00    
+Scanner 2.ScheduledUtilization              .87669    
+System.NumberOut                            1392.0    
+
+Beginning replication 8 of 10
+
+                                      ARENA Simulation Results
+                                       Jake - License: STUDENT
+
+                                  Summary for Replication 8 of 10
+
+Project: Airport Flows                                               Run execution date : 6/26/2017
+Analyst: Jake                                                        Model revision date: 6/26/2017
+
+Replication ended at time      : 5.0 Hours 
+Base Time Units: Hours
+
+                                           TALLY VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Observations
+___________________________________________________________________________________________________
+
+Traveller.VATime                            .02510     7.6018E-04 .00894     .15527       1363    
+Traveller.NVATime                           .00000     .00000     .00000     .00000       1363    
+Traveller.WaitTime                          .03969     (Corr)     .00000     .13231       1363    
+Traveller.TranTime                          .00000     .00000     .00000     .00000       1363    
+Traveller.OtherTime                         .00000     .00000     .00000     .00000       1363    
+Traveller.TotalTime                         .06479     (Corr)     .01056     .20832       1363    
+ID Boarding Pass Check.Queue.WaitingTime    .03031     (Corr)     .00000     .11686       1380    
+Personal Scanner.Queue.WaitingTime          .00927     .00315     .00000     .05229       1367    
+
+                                     DISCRETE-CHANGE VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Final Value
+___________________________________________________________________________________________________
+
+Traveller.WIP                               17.829     (Corr)     .00000     46.000     20.000    
+Resource 1.NumberBusy                       .00000     (Insuf)    .00000     .00000     .00000    
+Resource 1.NumberScheduled                  1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Resource 1.Utilization                      .00000     (Insuf)    .00000     .00000     .00000    
+ABF 4.NumberBusy                            .82989     (Insuf)    .00000     1.0000     1.0000    
+ABF 4.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 4.Utilization                           .82989     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberBusy                            .88026     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 2.Utilization                           .88026     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberBusy                            .86439     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 3.Utilization                           .86439     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberBusy                            .89404     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 1.Utilization                           .89404     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberBusy                        .86349     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 4.Utilization                       .86349     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberBusy                        .85871     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 1.Utilization                       .85871     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberBusy                        .85159     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 3.Utilization                       .85159     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberBusy                        .84969     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 2.Utilization                       .84969     (Insuf)    .00000     1.0000     1.0000    
+ID Boarding Pass Check.Queue.NumberInQueue  8.3661     (Corr)     .00000     38.000     3.0000    
+Personal Scanner.Queue.NumberInQueue        2.5711     1.1425     .00000     18.000     9.0000    
+
+                                             OUTPUTS
+
+Identifier                                   Value
+_____________________________________________________________
+
+Traveller.NumberIn                          1383.0    
+Traveller.NumberOut                         1363.0    
+Resource 1.NumberSeized                     .00000    
+Resource 1.ScheduledUtilization             .00000    
+ABF 4.NumberSeized                          338.00    
+ABF 4.ScheduledUtilization                  .82989    
+ABF 2.NumberSeized                          356.00    
+ABF 2.ScheduledUtilization                  .88026    
+ABF 3.NumberSeized                          332.00    
+ABF 3.ScheduledUtilization                  .86439    
+ABF 1.NumberSeized                          354.00    
+ABF 1.ScheduledUtilization                  .89404    
+Scanner 4.NumberSeized                      337.00    
+Scanner 4.ScheduledUtilization              .86349    
+Scanner 1.NumberSeized                      344.00    
+Scanner 1.ScheduledUtilization              .85871    
+Scanner 3.NumberSeized                      341.00    
+Scanner 3.ScheduledUtilization              .85159    
+Scanner 2.NumberSeized                      345.00    
+Scanner 2.ScheduledUtilization              .84969    
+System.NumberOut                            1363.0    
+
+Beginning replication 9 of 10
+
+                                      ARENA Simulation Results
+                                       Jake - License: STUDENT
+
+                                  Summary for Replication 9 of 10
+
+Project: Airport Flows                                               Run execution date : 6/26/2017
+Analyst: Jake                                                        Model revision date: 6/26/2017
+
+Replication ended at time      : 5.0 Hours 
+Base Time Units: Hours
+
+                                           TALLY VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Observations
+___________________________________________________________________________________________________
+
+Traveller.VATime                            .02498     7.3058E-04 .00859     .12408       1484    
+Traveller.NVATime                           .00000     .00000     .00000     .00000       1484    
+Traveller.WaitTime                          .12193     (Corr)     .00000     .38922       1484    
+Traveller.TranTime                          .00000     .00000     .00000     .00000       1484    
+Traveller.OtherTime                         .00000     .00000     .00000     .00000       1484    
+Traveller.TotalTime                         .14692     (Corr)     .00883     .45161       1484    
+ID Boarding Pass Check.Queue.WaitingTime    .10051     (Corr)     .00000     .37450       1496    
+Personal Scanner.Queue.WaitingTime          .02168     (Corr)     .00000     .08251       1488    
+
+                                     DISCRETE-CHANGE VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Final Value
+___________________________________________________________________________________________________
+
+Traveller.WIP                               44.724     (Corr)     .00000     112.00     81.000    
+Resource 1.NumberBusy                       .00000     (Insuf)    .00000     .00000     .00000    
+Resource 1.NumberScheduled                  1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Resource 1.Utilization                      .00000     (Insuf)    .00000     .00000     .00000    
+ABF 4.NumberBusy                            .92449     (Insuf)    .00000     1.0000     1.0000    
+ABF 4.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 4.Utilization                           .92449     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberBusy                            .93451     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 2.Utilization                           .93451     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberBusy                            .92167     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 3.Utilization                           .92167     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberBusy                            .94940     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 1.Utilization                           .94940     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberBusy                        .93071     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 4.Utilization                       .93071     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberBusy                        .92564     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 1.Utilization                       .92564     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberBusy                        .92770     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 3.Utilization                       .92770     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberBusy                        .93238     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 2.Utilization                       .93238     (Insuf)    .00000     1.0000     1.0000    
+ID Boarding Pass Check.Queue.NumberInQueue  30.815     (Corr)     .00000     99.000     69.000    
+Personal Scanner.Queue.NumberInQueue        6.4622     2.5947     .00000     28.000     4.0000    
+
+                                             OUTPUTS
+
+Identifier                                   Value
+_____________________________________________________________
+
+Traveller.NumberIn                          1565.0    
+Traveller.NumberOut                         1484.0    
+Resource 1.NumberSeized                     .00000    
+Resource 1.ScheduledUtilization             .00000    
+ABF 4.NumberSeized                          378.00    
+ABF 4.ScheduledUtilization                  .92449    
+ABF 2.NumberSeized                          371.00    
+ABF 2.ScheduledUtilization                  .93451    
+ABF 3.NumberSeized                          377.00    
+ABF 3.ScheduledUtilization                  .92167    
+ABF 1.NumberSeized                          370.00    
+ABF 1.ScheduledUtilization                  .94940    
+Scanner 4.NumberSeized                      372.00    
+Scanner 4.ScheduledUtilization              .93071    
+Scanner 1.NumberSeized                      370.00    
+Scanner 1.ScheduledUtilization              .92564    
+Scanner 3.NumberSeized                      375.00    
+Scanner 3.ScheduledUtilization              .92770    
+Scanner 2.NumberSeized                      371.00    
+Scanner 2.ScheduledUtilization              .93238    
+System.NumberOut                            1484.0    
+
+Beginning replication 10 of 10
+
+                                      ARENA Simulation Results
+                                       Jake - License: STUDENT
+
+                                  Summary for Replication 10 of 10
+
+Project: Airport Flows                                               Run execution date : 6/26/2017
+Analyst: Jake                                                        Model revision date: 6/26/2017
+
+Replication ended at time      : 5.0 Hours 
+Base Time Units: Hours
+
+                                           TALLY VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Observations
+___________________________________________________________________________________________________
+
+Traveller.VATime                            .02511     6.4334E-04 .00888     .10084       1516    
+Traveller.NVATime                           .00000     .00000     .00000     .00000       1516    
+Traveller.WaitTime                          .15256     (Corr)     .00000     .30156       1516    
+Traveller.TranTime                          .00000     .00000     .00000     .00000       1516    
+Traveller.OtherTime                         .00000     .00000     .00000     .00000       1516    
+Traveller.TotalTime                         .17767     (Corr)     .00947     .34673       1516    
+ID Boarding Pass Check.Queue.WaitingTime    .10801     (Corr)     .00000     .23062       1553    
+Personal Scanner.Queue.WaitingTime          .04674     (Corr)     .00000     .12724       1520    
+
+                                     DISCRETE-CHANGE VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Final Value
+___________________________________________________________________________________________________
+
+Traveller.WIP                               57.524     (Corr)     .00000     133.00     125.00    
+Resource 1.NumberBusy                       .00000     (Insuf)    .00000     .00000     .00000    
+Resource 1.NumberScheduled                  1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Resource 1.Utilization                      .00000     (Insuf)    .00000     .00000     .00000    
+ABF 4.NumberBusy                            .96984     (Insuf)    .00000     1.0000     1.0000    
+ABF 4.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 4.Utilization                           .96984     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberBusy                            .97640     (Insuf)    .00000     1.0000     1.0000    
+ABF 2.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 2.Utilization                           .97640     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberBusy                            .97837     (Insuf)    .00000     1.0000     1.0000    
+ABF 3.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 3.Utilization                           .97837     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberBusy                            .97977     (Insuf)    .00000     1.0000     1.0000    
+ABF 1.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+ABF 1.Utilization                           .97977     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberBusy                        .95648     (Insuf)    .00000     1.0000     1.0000    
+Scanner 4.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 4.Utilization                       .95648     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberBusy                        .95381     (Insuf)    .00000     1.0000     1.0000    
+Scanner 1.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 1.Utilization                       .95381     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberBusy                        .95505     (Insuf)    .00000     1.0000     1.0000    
+Scanner 3.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 3.Utilization                       .95505     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberBusy                        .95175     (Insuf)    .00000     1.0000     1.0000    
+Scanner 2.NumberScheduled                   1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Scanner 2.Utilization                       .95175     (Insuf)    .00000     1.0000     1.0000    
+ID Boarding Pass Check.Queue.NumberInQueue  35.284     (Corr)     .00000     94.000     88.000    
+Personal Scanner.Queue.NumberInQueue        14.518     (Corr)     .00000     39.000     29.000    
+
+                                             OUTPUTS
+
+Identifier                                   Value
+_____________________________________________________________
+
+Traveller.NumberIn                          1641.0    
+Traveller.NumberOut                         1516.0    
+Resource 1.NumberSeized                     .00000    
+Resource 1.ScheduledUtilization             .00000    
+ABF 4.NumberSeized                          377.00    
+ABF 4.ScheduledUtilization                  .96984    
+ABF 2.NumberSeized                          383.00    
+ABF 2.ScheduledUtilization                  .97640    
+ABF 3.NumberSeized                          392.00    
+ABF 3.ScheduledUtilization                  .97837    
+ABF 1.NumberSeized                          401.00    
+ABF 1.ScheduledUtilization                  .97977    
+Scanner 4.NumberSeized                      383.00    
+Scanner 4.ScheduledUtilization              .95648    
+Scanner 1.NumberSeized                      375.00    
+Scanner 1.ScheduledUtilization              .95381    
+Scanner 3.NumberSeized                      377.00    
+Scanner 3.ScheduledUtilization              .95505    
+Scanner 2.NumberSeized                      385.00    
+Scanner 2.ScheduledUtilization              .95175    
+System.NumberOut                            1516.0    
+
+
+                                      ARENA Simulation Results
+                                       Jake - License: STUDENT
+
+                                 Output Summary for 10 Replications
+
+Project: Airport Flows                                               Run execution date : 6/26/2017
+Analyst: Jake                                                        Model revision date: 6/26/2017
+
+
+                                             OUTPUTS
+
+Identifier                                 Average    Half-width Minimum    Maximum # Replications
+___________________________________________________________________________________________________
+
+Traveller.NumberIn                          1521.0     63.708     1383.0     1641.0     10
+Traveller.NumberOut                         1455.0     47.042     1363.0     1530.0     10
+Resource 1.NumberSeized                     .00000     .00000     .00000     .00000     10
+Resource 1.ScheduledUtilization             .00000     .00000     .00000     .00000     10
+ABF 4.NumberSeized                          365.60     17.913     326.00     402.00     10
+ABF 4.ScheduledUtilization                  .89475     .03538     .82989     .96984     10
+ABF 2.NumberSeized                          375.70     10.885     356.00     410.00     10
+ABF 2.ScheduledUtilization                  .91297     .02625     .86920     .97640     10
+ABF 3.NumberSeized                          358.50     20.833     311.00     397.00     10
+ABF 3.ScheduledUtilization                  .90619     .02714     .85972     .97837     10
+ABF 1.NumberSeized                          371.90     14.319     348.00     403.00     10
+ABF 1.ScheduledUtilization                  .92226     .02602     .86940     .97977     10
+Scanner 4.NumberSeized                      362.80     13.398     337.00     383.00     10
+Scanner 4.ScheduledUtilization              .90973     .03083     .85751     .96353     10
+Scanner 1.NumberSeized                      364.40     10.754     344.00     384.00     10
+Scanner 1.ScheduledUtilization              .91235     .02912     .85871     .96571     10
+Scanner 3.NumberSeized                      364.00     10.806     341.00     384.00     10
+Scanner 3.ScheduledUtilization              .90886     .02844     .85159     .96446     10
+Scanner 2.NumberSeized                      367.80     12.719     345.00     391.00     10
+Scanner 2.ScheduledUtilization              .91040     .02838     .84969     .96184     10
+System.NumberOut                            1455.0     47.042     1363.0     1530.0     10
+
+Simulation run time: 0.42 minutes.
+Simulation run complete.

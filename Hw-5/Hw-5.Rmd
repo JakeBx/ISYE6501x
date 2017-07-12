@@ -1,0 +1,117 @@
+---
+title: "Homework 5"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+# Hw-5
+
+## Q1
+
+First we will load the data and build the basic models, one with every feature and one with none.
+
+```{r}
+# Stepwise Regression
+library(MASS)
+library(caret)
+crime <- read.table('../Hw-3/uscrime.txt', header = TRUE)
+# sapply(crime, class)
+crime$So <- as.factor(crime$So)
+crime$Crime <- as.numeric(crime$Crime)
+
+preprocessParams <- preProcess(crime[,1:15], method=c("scale","center"))
+crime.lm <- crime
+crime.lm[,1:15] <- predict(preprocessParams,crime.lm[,1:15])
+
+## Stepwise Regression Model
+crime.full <- lm(Crime~., data = crime.lm)
+crime.null <- lm(Crime~1, data = crime.lm)
+```
+We will make forward selection, backwards selection, then bi-direction
+```{R}
+# Forward Selection
+step.forw <- stepAIC(crime.null, direction = "forward",trace = FALSE,
+                     scope = ~ M + So + Ed + Po1 + Po2 + LF + M.F + Pop + NW + U1 + U2 + Wealth + Ineq + Prob +Time)
+summary(step.forw)
+```
+```{r}
+
+# Backward Selection
+step.back <- stepAIC(crime.full, direction = "backward", trace = FALSE)
+summary(step.back)
+```
+We can see that stepping back we have removed a number of coeddicants. Lets have a look at a model with both forwards and backwarads selection.
+```{r}
+# Forward and Bakward
+step.both <- stepAIC(crime.null, direction = "both",trace = FALSE,
+                     scope = ~ M + So + Ed + Po1 + Po2 + LF + M.F + Pop + NW + U1 + U2 + Wealth + Ineq + Prob +Time)
+summary(step.both)
+```
+These models look to be ok for a light touch approach to variable selection. The bi-directional selection produced the same model as the forward, and if we ran it with a full model and cut it back it would build the same as the backwards selection. I wouldn't expect more interplay and different models until it was a higher dimensional feature space I suppose.
+
+### Part 2: Elastic-Net and Lasso
+
+For this problem I am going to feed it into a grid, and also feed in a grid from alpha = 0 to 1, and also play around with the regularisation term.
+```{r}
+# RIDGE, LASSO, ELASTICNET
+library(caret)
+library(glmnet)
+control <- trainControl(method="repeatedcv", number=10, repeats=3)
+metric <- "RMSE"
+# GLMNET
+set.seed(7)
+grid <- expand.grid(.alpha = seq(0, 1, length = 11),.lambda = c((1:5)/10,(1:10),(2:10)*10))
+fit.glmnetlong <- train(Crime~., data=crime, method="glmnet", family="gaussian", tuneGrid=grid, metric=metric, preProc=c("center", "scale"), trControl=control)
+plot(fit.glmnetlong)
+```
+When I first ran this test I had it on much lower regularisation terms and saw no real sensitivity to it. we can wee that we are getting best performance at around 15, so lets run two models in that range, for the second we will do a BoxCos (log) transform on the data. We saw in previous work the BoxCox transform perfoming a bit better.
+```{r}
+grid <- expand.grid(.alpha = seq(.0, 1, length = 11),.lambda = seq(0, 30, length = 30))
+fit.glmnet <- train(Crime~., data=crime, method="glmnet", family="gaussian", tuneGrid=grid, metric=metric, preProc=c("center", "scale"), trControl=control)
+fit.glmnetbc <- train(Crime~., data=crime, method="glmnet", family="gaussian", tuneGrid=grid, metric=metric, preProc=c("center", "scale", "BoxCox"), trControl=control)
+
+plot(fit.glmnet)
+```
+
+We see our ridge regression model performing fairly consistently in terms of RMSE, and the LASSO actually performs best out of the set at around RMSE = 241.3, the Rsq value here is around 66%. Let's have a look at the model with the BoxCox transform:
+```{r}
+plot(fit.glmnetbc)
+```
+Here the ridge performs consistenly well, will the LASSO performs worse for higher values of regularisation.
+
+Lets compare each set:
+```{r}
+results <- resamples(list(GLMNET=fit.glmnet, GLMNET.BOXCOX=fit.glmnetbc))
+summary(results)
+dotplot(results)
+```
+So again boxcox looks like an overall slighly better fit. With Rsq going up to 98% that data looks over fit. Lets take the parameters from the best performing BC transform as our final model:
+```{r}
+results <- fit.glmnetbc$results
+results[which.min(results$RMSE),]
+```
+So this is an elastic net with an 0.2 weight, and an Rsq of 71. Nice one.
+
+## Q2
+
+For facial recognition systems you may design an experiment to test the level of work produced given different configurations of algorithimn tuning and manual resolution. This would allow you to optimise the level of work and risk control / quality produced by the system.
+
+## Q3
+
+Below we provide the following to the participants for the survey:
+```{r}
+library(FrF2)
+DoE <- FrF2(16,10, default.levels = c("In", "Out"),seed=42)
+DoE
+```
+This will provide fractional factorials to model each's value.
+
+## Q4
+
+a. Binomial = the chance my collegue is on facebook when I walk in tomorrow
+b. Geometric = the number of times in a week I walk in and my colleague is on facebook
+c. Poisson = The number of meteors greater than 1 meter diameter that strike Earth in a year
+d. Exponential = can be used to model the time until a radio active particle decays
+e. Weibull = can be used in weather forecasting for windspeeds
+
+Looking forward to doing some simulation modelling with these distributions.

@@ -1,0 +1,17 @@
+[RESOURCES]
+Resource 1
+ABF 4
+ABF 2
+ABF 3
+ABF 1
+Scanner 4
+Scanner 1
+Scanner 3
+Scanner 2
+[VARIABLES]
+ID Boarding Pass Check.NumberOut
+ID Boarding Pass Check.NumberIn
+Enter Airport.NumberOut
+Border Crossing Complete.NumberOut
+Personal Scanner.NumberOut
+Personal Scanner.NumberIn
